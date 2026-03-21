@@ -6,8 +6,8 @@ AWS CDK project for deploying AWS Elastic Disaster Recovery (DRS) infrastructure
 This stack is **hardcoded to deploy ONLY in Singapore (ap-southeast-1)**. All resources will be created in this region.
 
 ## Account Details
-- **Account ID**: 345241143078
-- **Account**: Stratpoint-Sandbox7-NonProd
+- **Account ID**: sample-accountid
+- **Account**: sandbox-environment
 - **Region**: ap-southeast-1 (Singapore) - LOCKED
 
 ## Prerequisites
