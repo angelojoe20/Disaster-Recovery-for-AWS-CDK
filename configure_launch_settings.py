@@ -8,7 +8,7 @@ import boto3
 import sys
 
 REGION = "ap-southeast-1"
-ACCOUNT_ID = "345241143078"
+ACCOUNT_ID = "sample-accountid"
 
 def get_stack_outputs():
     """Get VPC and Security Group from CDK stack outputs"""
