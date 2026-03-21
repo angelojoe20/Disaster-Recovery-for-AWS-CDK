@@ -8,7 +8,7 @@ from constructs import Construct
 
 # Fixed configuration for Singapore region only
 REGION = "ap-southeast-1"
-ACCOUNT_ID = "345241143078"
+ACCOUNT_ID = "sample-accountid"
 
 
 class DRSStackSimple(Stack):
