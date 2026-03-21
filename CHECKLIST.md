@@ -19,7 +19,7 @@
 
 - [ ] **Bootstrap CDK** (One-time per account)
   ```bash
-  cdk bootstrap aws://345241143078/ap-southeast-1
+  cdk bootstrap aws://sample-accountid/ap-southeast-1
   ```
 
 - [ ] **Initialize DRS Service** (One-time per region)
