@@ -15,7 +15,7 @@ This stack is **hardcoded to deploy ONLY in Singapore (ap-southeast-1)**. All re
 1. Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 2. Install [CDK CLI](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_install)
 3. Configure AWS CLI credentials
-4. Bootstrap CDK in Singapore: `cdk bootstrap aws://345241143078/ap-southeast-1`
+4. Bootstrap CDK in Singapore: `cdk bootstrap aws://sample-accountid/ap-southeast-1`
 5. Initialize DRS in Singapore: `aws drs initialize-service --region ap-southeast-1`
 6. Create virtual environment:
    ```
