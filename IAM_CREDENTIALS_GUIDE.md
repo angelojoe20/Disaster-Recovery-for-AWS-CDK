@@ -13,7 +13,7 @@ aws iam get-user --user-name drs-agent-installer
     "User": {
         "UserName": "drs-agent-installer",
         "UserId": "AIDAXXXXXXXXXXXXXXXXX",
-        "Arn": "arn:aws:iam::345241143078:user/drs-agent-installer",
+        "Arn": "arn:aws:iam::sample-accountid:user/drs-agent-installer",
         "CreateDate": "2024-01-15T10:30:00Z"
     }
 }
