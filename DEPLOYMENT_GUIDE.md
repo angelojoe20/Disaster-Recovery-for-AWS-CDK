@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ### 3. Deploy CDK Stack (Singapore Only)
 ```bash
 # Bootstrap (one-time)
-cdk bootstrap aws://345241143078/ap-southeast-1
+cdk bootstrap aws://sample-accountid/ap-southeast-1
 
 # Preview CloudFormation template
 cdk synth
