@@ -5,7 +5,7 @@ from stacks import DRSStackSimple
 
 # Fixed region: Singapore (ap-southeast-1)
 REGION = "ap-southeast-1"
-ACCOUNT = "345241143078"  # Stratpoint-Sandbox7-NonProd
+ACCOUNT = "sample-accountid"
 
 app = cdk.App()
 stack = DRSStackSimple(
