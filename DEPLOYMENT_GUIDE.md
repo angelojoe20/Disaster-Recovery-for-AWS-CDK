@@ -3,9 +3,8 @@
 ## ⚠️ IMPORTANT: This stack is LOCKED to Singapore region (ap-southeast-1)
 
 ## Account Information
-- **Account ID**: 345241143078
-- **Account Name**: Stratpoint-Sandbox7-NonProd
-- **Account Alias**: spsandbox7
+- **Account ID**: sample-accountid
+- **Account Name**: sandbox-environment
 - **Region**: ap-southeast-1 (Singapore) - HARDCODED
 
 ## Architecture
@@ -31,7 +30,7 @@
 
 3. **Bootstrap CDK in Singapore** (one-time)
    ```bash
-   cdk bootstrap aws://345241143078/ap-southeast-1
+   cdk bootstrap aws://sample-accountid/ap-southeast-1
    ```
 
 4. **Initialize DRS Service in Singapore** (one-time)
