@@ -1,6 +1,6 @@
 # AWS DRS Deployment Guide - Singapore (ap-southeast-1) ONLY
 
-## ⚠️ IMPORTANT: This stack is LOCKED to Singapore region (ap-southeast-1)
+##  IMPORTANT: This stack is LOCKED to Singapore region (ap-southeast-1)
 
 ## Account Information
 - **Account ID**: sample-accountid
