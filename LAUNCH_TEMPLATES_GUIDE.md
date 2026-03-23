@@ -2,7 +2,7 @@
 
 ## Understanding DRS Launch Configurations
 
-### 🏗️ Architecture Overview
+### Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -14,7 +14,7 @@
                  ↓
 ┌─────────────────────────────────────────────────────────────┐
 │ STAGING AREA (AWS - Created by CDK)                         │
-│ ✅ Replication Configuration Template                       │
+│   Replication Configuration Template                       │
 │    - Replication servers (t3.small)                         │
 │    - EBS volumes for staging                                │
 │    - Security groups                                        │
@@ -24,7 +24,7 @@
                  ↓
 ┌─────────────────────────────────────────────────────────────┐
 │ RECOVERY INSTANCES (During Failover)                        │
-│ ⚙️  Launch Settings (Configured per server)                 │
+│   Launch Settings (Configured per server)                 │
 │    - Instance type                                          │
 │    - Subnet placement                                       │
 │    - Security groups                                        │
@@ -32,9 +32,9 @@
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 📋 Two Types of Configurations
+##  Two Types of Configurations
 
-### 1. Replication Configuration Template (✅ Already in CDK)
+### 1. Replication Configuration Template ( Already in CDK)
 
 **What it controls:** The staging/replication environment
 
@@ -57,7 +57,7 @@ replication_config = drs.CfnReplicationConfigurationTemplate(
 
 ---
 
-### 2. Launch Settings (❌ Must Configure After Adding Servers)
+### 2. Launch Settings ( Must Configure After Adding Servers)
 
 **What it controls:** The recovered instances during failover
 
@@ -126,7 +126,7 @@ aws drs update-launch-configuration \
   --region ap-southeast-1
 ```
 
-## 🎯 Launch Settings Options Explained
+## Launch Settings Options Explained
 
 ### Instance Type Right Sizing
 
@@ -149,11 +149,11 @@ aws drs update-launch-configuration \
 | `AWS-provided` | Use AWS licenses | Included in EC2 cost |
 | `BYOL` | Bring your own license | You provide license |
 
-## 📊 Complete Deployment Timeline
+##  Complete Deployment Timeline
 
 ```
 Day 1: Infrastructure Setup
-├─ 1. cdk deploy                          (5-10 min) ✅ CDK creates staging
+├─ 1. cdk deploy                          (5-10 min) CDK creates staging
 ├─ 2. Install DRS agents                  (5 min per server)
 └─ 3. Initial replication starts          (2-24 hours)
 
@@ -163,10 +163,10 @@ Day 2: Configuration
 └─ 6. Run recovery drill (optional)       (30 min)
 
 Ongoing: Continuous Protection
-└─ Continuous replication (24/7)          ✅ DRS fully operational
+└─ Continuous replication (24/7)          DRS fully operational
 ```
 
-## ✅ Verification Checklist
+##  Verification Checklist
 
 After configuring launch settings:
 
@@ -192,7 +192,7 @@ aws drs start-recovery \
   --region ap-southeast-1
 ```
 
-## 🚨 Common Issues
+##  Common Issues
 
 ### Issue 1: "Launch settings not configured"
 **Solution:** Run `configure_launch_settings.py` or configure via Console
@@ -206,7 +206,7 @@ aws drs start-recovery \
 ### Issue 4: "Instance type not available"
 **Solution:** Use `BASIC` right-sizing or manually select available instance type
 
-## 💰 Cost Implications
+##  Cost Implications
 
 ### Staging Area (Always Running)
 - Replication servers: ~$15/month per source server
@@ -218,26 +218,26 @@ aws drs start-recovery \
 - EBS volumes: Depends on size
 - **Example: t3.medium = ~$30/month (only when running)**
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - [AWS DRS Launch Settings Documentation](https://docs.aws.amazon.com/drs/latest/userguide/launch-settings.html)
 - [Instance Right Sizing](https://docs.aws.amazon.com/drs/latest/userguide/right-sizing.html)
 - [Recovery Drills](https://docs.aws.amazon.com/drs/latest/userguide/drill-recovery.html)
 
-## 🎯 Summary
+##  Summary
 
 **What CDK Does:**
-✅ Creates staging infrastructure (replication configuration template)
-✅ Creates VPC, subnets, security groups
-✅ Creates IAM roles
+ Creates staging infrastructure (replication configuration template)
+ Creates VPC, subnets, security groups
+ Creates IAM roles
 
 **What You Must Do:**
-⚙️ Install DRS agents on source servers
-⚙️ Configure launch settings (use `configure_launch_settings.py`)
-⚙️ Run recovery drills to test
+ Install DRS agents on source servers
+ Configure launch settings (use `configure_launch_settings.py`)
+ Run recovery drills to test
 
 **When DRS is Fully Operational:**
-✅ Agents installed
-✅ Initial replication complete
-✅ Launch settings configured
-✅ Recovery drill successful
+    Agents installed
+    Initial replication complete
+    Launch settings configured
+    Recovery drill successful
