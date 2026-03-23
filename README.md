@@ -2,7 +2,7 @@
 
 AWS CDK project for deploying AWS Elastic Disaster Recovery (DRS) infrastructure in Singapore region.
 
-## ⚠️ IMPORTANT: Region Lock
+## IMPORTANT: Region Lock
 This stack is **hardcoded to deploy ONLY in Singapore (ap-southeast-1)**. All resources will be created in this region.
 
 ## Account Details
