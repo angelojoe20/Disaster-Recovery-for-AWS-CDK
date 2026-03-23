@@ -1,6 +1,6 @@
 # IAM Credentials Quick Reference Guide
 
-## 🔍 Quick Check Commands
+## Quick Check Commands
 
 ### 1. Check if User Exists
 ```bash
@@ -86,7 +86,7 @@ aws iam get-access-key-last-used --access-key-id AKIAIOSFODNN7EXAMPLE
 
 ---
 
-## 🛠️ Management Commands
+## Management Commands
 
 ### Create User (if doesn't exist)
 ```bash
@@ -107,7 +107,7 @@ aws iam attach-user-policy \
 aws iam create-access-key --user-name drs-agent-installer
 ```
 
-**⚠️ IMPORTANT:** Save the output immediately! Secret key is shown only once.
+**IMPORTANT:** Save the output immediately! Secret key is shown only once.
 
 **Output:**
 ```json
@@ -135,7 +135,7 @@ aws iam delete-access-key \
 
 ---
 
-## 🚀 Automated Script
+## Automated Script
 
 ### Option 1: Python Script (Recommended)
 ```bash
@@ -143,11 +143,11 @@ python check_iam_credentials.py
 ```
 
 This script will:
-- ✅ Check if user exists
-- ✅ Check if policy is attached
-- ✅ List existing access keys
-- ✅ Create new access key if needed
-- ✅ Save credentials to file
+- Check if user exists
+- Check if policy is attached
+- List existing access keys
+- Create new access key if needed
+- Save credentials to file
 
 ### Option 2: One-Liner Check
 ```bash
@@ -162,7 +162,7 @@ aws iam list-access-keys --user-name drs-agent-installer 2>&1
 
 ---
 
-## 📋 Complete Setup Script
+## Complete Setup Script
 
 ```bash
 #!/bin/bash
@@ -175,20 +175,20 @@ echo "Checking IAM user: $USER_NAME"
 
 # Check if user exists
 if aws iam get-user --user-name $USER_NAME &>/dev/null; then
-    echo "✅ User exists"
+    echo "User exists"
 else
-    echo "❌ User doesn't exist. Creating..."
+    echo "User doesn't exist. Creating..."
     aws iam create-user --user-name $USER_NAME
-    echo "✅ User created"
+    echo "User created"
 fi
 
 # Check if policy is attached
 if aws iam list-attached-user-policies --user-name $USER_NAME | grep -q "$POLICY_ARN"; then
-    echo "✅ Policy attached"
+    echo "Policy attached"
 else
     echo "❌ Policy not attached. Attaching..."
     aws iam attach-user-policy --user-name $USER_NAME --policy-arn $POLICY_ARN
-    echo "✅ Policy attached"
+    echo "Policy attached"
 fi
 
 # List access keys
@@ -201,11 +201,11 @@ read -r response
 if [[ "$response" =~ ^[Yy]$ ]]; then
     echo "Creating access key..."
     aws iam create-access-key --user-name $USER_NAME | tee drs-credentials.json
-    echo -e "\n⚠️  Credentials saved to drs-credentials.json"
+    echo -e "\n Credentials saved to drs-credentials.json"
     echo "   Keep this file secure!"
 fi
 
-echo -e "\n✅ Setup complete"
+echo -e "\n Setup complete"
 ```
 
 **Save as:** `setup_iam_credentials.sh`
@@ -218,7 +218,7 @@ chmod +x setup_iam_credentials.sh
 
 ---
 
-## 🔐 Security Best Practices
+## Security Best Practices
 
 ### 1. Rotate Access Keys Regularly
 ```bash
@@ -256,7 +256,7 @@ aws iam list-access-keys --user-name drs-agent-installer \
 
 ---
 
-## ⚠️ Troubleshooting
+## Troubleshooting
 
 ### Error: "User already exists"
 ```bash
@@ -294,7 +294,7 @@ aws iam delete-access-key --user-name drs-agent-installer --access-key-id OLD_KE
 
 ---
 
-## 📊 Quick Status Check
+## Quick Status Check
 
 ```bash
 # Run this to see complete status
@@ -323,7 +323,7 @@ chmod +x check_status.sh
 
 ---
 
-## 🎯 Summary
+## Summary
 
 **To check IAM credentials:**
 ```bash
