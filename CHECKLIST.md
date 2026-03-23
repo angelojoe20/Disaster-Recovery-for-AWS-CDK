@@ -1,6 +1,6 @@
 # AWS DRS Deployment Checklist
 
-## ✅ Complete Deployment Checklist
+## Complete Deployment Checklist
 
 ### Phase 1: Infrastructure Setup (One-Time)
 
@@ -138,18 +138,18 @@
 
 ---
 
-## 🎯 DRS is Fully Operational When:
+## DRS is Fully Operational When:
 
-✅ Infrastructure deployed (CDK)
-✅ DRS service initialized
-✅ Agents installed on all source servers
-✅ Launch settings configured
-✅ Replication status = "CONTINUOUS"
-✅ Recovery drill successful (optional)
+   Infrastructure deployed (CDK)
+   DRS service initialized
+   Agents installed on all source servers
+   Launch settings configured
+   Replication status = "CONTINUOUS"
+   Recovery drill successful (optional)
 
 ---
 
-## 📊 Status Check Commands
+##  Status Check Commands
 
 ### Quick Health Check
 ```bash
@@ -182,7 +182,7 @@ aws drs get-replication-configuration \
 
 ---
 
-## 🚨 Troubleshooting Checklist
+##  Troubleshooting Checklist
 
 ### Agent Won't Connect
 - [ ] Check outbound HTTPS (443) is allowed
@@ -211,7 +211,7 @@ aws drs get-replication-configuration \
 
 ---
 
-## 💰 Cost Tracking
+##  Cost Tracking
 
 ### Monthly Costs (Per Server)
 - Replication server: ~$15/month
@@ -224,14 +224,14 @@ aws drs get-replication-configuration \
 - Data transfer: Minimal
 
 ### Cost Optimization
-- [ ] Use t3.small for replication servers ✅ (already configured)
-- [ ] Use GP3 for staging disks ✅ (already configured)
+- [ ] Use t3.small for replication servers (already configured)
+- [ ] Use GP3 for staging disks (already configured)
 - [ ] Terminate drill instances after testing
 - [ ] Monitor unused source servers
 
 ---
 
-## 📞 Support Resources
+## Support Resources
 
 - **AWS DRS Documentation**: https://docs.aws.amazon.com/drs/
 - **AWS Support**: Open ticket in Console
@@ -240,7 +240,7 @@ aws drs get-replication-configuration \
 
 ---
 
-## 🔄 Regular Maintenance
+## Regular Maintenance
 
 ### Weekly
 - [ ] Check replication lag
