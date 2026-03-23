@@ -186,7 +186,7 @@ fi
 if aws iam list-attached-user-policies --user-name $USER_NAME | grep -q "$POLICY_ARN"; then
     echo "Policy attached"
 else
-    echo "❌ Policy not attached. Attaching..."
+    echo " Policy not attached. Attaching..."
     aws iam attach-user-policy --user-name $USER_NAME --policy-arn $POLICY_ARN
     echo "Policy attached"
 fi
